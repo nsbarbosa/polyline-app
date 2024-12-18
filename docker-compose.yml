@@ -1,0 +1,24 @@
+services:
+  backend:
+    build:
+      context: ./server  # Caminho para a pasta do seu backend
+    ports:
+      - "3000:3000"  # Mapeia a porta do backend
+    networks:
+      - app-network
+    environment:
+      - NODE_ENV=production
+
+  frontend:
+    build:
+      context: ./client  # Caminho para a pasta do seu frontend
+    ports:
+      - "8080:80"  # Mapeia a porta do frontend (Nginx)
+    networks:
+      - app-network
+    depends_on:
+      - backend  # Garante que o backend seja iniciado antes do frontend
+
+networks:
+  app-network:
+    driver: bridge
