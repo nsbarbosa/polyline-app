@@ -32,7 +32,7 @@ Follow these steps to set up the project locally:
    ```bash
    docker-compose up --build
 3. Access the application:
-  The application should now be running at http://localhost:4000
+  The application should now be running at http://localhost:8080
 
 ## Usage
 1. Upload an ASCII file containing the polyline coordinates in the frontend.
